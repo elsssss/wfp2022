@@ -14,16 +14,32 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::post('/', function () {
-    return view('welcome');
-});
+// Route::post('elsa', function () {
+//     return view('welcome');
+// });
 
-Route::get('/elsa', function () {
-    return view('welcome');
+// Route::view('elsa', 'welcome');
+
+Route::get('my', function () {
+    return view('biodata', ['nrp' => '160419157']);
 });
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
+// Route::get('myfriend/{nrp}', function ($nrp) {
+//     return view('biodata', ['nrp' => $nrp]);
+// });
 
+Route::get('myfriend/{nrp?}', function ($nrp = null) {
+    if($nrp == null) {
+        return view('biodata');
+    }
+    // return view('nrp', ['nrp'=>$nrp]);
+    return view('biodata', compact('nrp'));
+});
+
+Route::get('myfriend', function () {
+    return view('biodata');
+});

@@ -64,6 +64,12 @@
         </style>
     </head>
     <body>
+        @if ($name == "")
+        No name
+        @else
+        Hai {{$name}}
+        @endif
+        {{--Hello, {{$name}} --}}
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
