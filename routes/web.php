@@ -43,3 +43,8 @@ Route::get('myfriend/{nrp?}', function ($nrp = null) {
 Route::get('myfriend', function () {
     return view('biodata');
 });
+
+Route::resource('category', CategoryController::class);
+Route::resource('product', ProductController::class);
+
+
